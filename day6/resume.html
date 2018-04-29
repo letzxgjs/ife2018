@@ -9,6 +9,22 @@
 <!-- <link href="css/style_1.css" rel="stylesheet"> -->
 <link href="css/style_2.css" rel="stylesheet">
 <!-- <link href="css/style_3.css" rel="stylesheet"> -->
+<style>
+	.btn {
+		position: fixed;
+		right: 0;
+		top: 20px;
+		width: 120px;
+	}
+	button {
+		width: 100px;
+		height: 40px;
+		line-height: 20px;
+		text-align: center;
+		margin: 10px 0;
+		cursor: pointer;
+	}
+</style>
 </head>
 <body>
 	<div class="resume">
@@ -61,5 +77,20 @@
 			</div>
 		</div>
 	</div>
+	<div class="btn">
+		<button>style_1</button>
+		<button>style_2</button>
+		<button>style_3</button>
+	</div>
+	<script>
+		var btn = document.getElementsByTagName("button");
+		var len = btn.length;
+		var link = document.getElementsByTagName("link")[0];
+		for (let i = 0; i < len ; i++){
+			btn[i].addEventListener('click', function(e){
+				link.href = "css/style_" + (i + 1) + ".css";
+			});
+		}
+	</script>
 </body>
 </html>
