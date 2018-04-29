@@ -2,4 +2,4 @@
 ife2018 作业代码
 day6
       resume预览地址
-      https://letzxgjs.github.io/ife2018/resume.html
+      https://letzxgjs.github.io/ife2018/day6/resume.html
