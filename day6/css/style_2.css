@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2018-04-29 13:40:29
+ * @version $Id$
+ */
+* {
+	padding: 0;
+	margin: 0;
+}
+.resume {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+.head {
+	float: left;
+	width: 200px;
+	background-color: #65A5FA;
+	margin-right: 20px;
+}
+.details {
+	float: left;
+}
+h1 {
+	color: #fff;
+	text-align: center;
+	padding-top: 50px;
+}
+.details>div {
+	clear: both;
+	padding: 10px 0;
+}
+h2 {
+	padding-bottom: 20px;
+}
+dt {
+	font-weight: 600;
+	padding-right: 10px;
+}
+dd {
+	margin: 0 40px 20px 0;
+}
+.fl dt,
+.fl dd {
+	display: inline-block;
+	margin-bottom: 0;
+}

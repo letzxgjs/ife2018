@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2018-04-29 14:29:49
+ * @version $Id$
+ */
+* {
+	padding: 0;
+	margin: 0;
+}
+.head {
+	width: 100%;
+	background-color: #858585;
+	margin-right: 20px;
+}
+.details {
+	float: left;
+	width: 100%;
+}
+h1 {
+	color: #fff;
+	height: 60px;
+	line-height: 60px;
+	font-size: 20px;
+	text-indent: 1em;
+}
+.details>div {
+	overflow: hidden;
+	border-bottom: 1px solid #EEE;
+}
+h2 {
+	display: inline-block;
+	float: left;
+	width: 100px;
+	height: 120px;
+	line-height: 120px;
+	text-align: center;
+	background-color: #D6D6D6;
+	font-size: 16px;
+}
+dl {
+	float: left;
+	height: 110px;
+	padding: 10px 0 0 10px;
+	width: 600px;
+}
+dt {
+	font-weight: 600;
+}
+dd {
+	margin-right: 40px;
+}
+.fl dt,
+.fl dd {
+	display: inline-block;
+	padding-right: 10px;
+}
+.skills dt,
+.edu dt,
+.projects dt {
+	display: inline-block;
+	float: left;
+}
