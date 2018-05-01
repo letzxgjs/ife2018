@@ -17,13 +17,12 @@
 	display: flex;
 }
 .head {
-	float: left;
 	width: 200px;
 	background-color: #65A5FA;
 	margin-right: 20px;
 }
 .details {
-	float: left;
+	flex: 1;
 }
 h1 {
 	color: #fff;
