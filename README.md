@@ -8,3 +8,7 @@ day6
 day8
       布局预览地址
       https://letzxgjs.github.io/ife2018/day8/layout.html
+      
+day11
+      切图网页
+      https://letzxgjs.github.io/ife2018/day11/index.html
