@@ -525,6 +525,8 @@ footer {
 	height: 410px;
 	background-color: #131313;
 	padding-top: 85px;
+}
+footer .w>ul {
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
