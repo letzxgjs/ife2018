@@ -480,14 +480,14 @@ button {
 	background-color: #fff;
 	position: absolute;
 	left: 50%;
-	top: -9px;
+	top: -10px;
 	z-index: 10;
 }
-.new {
+.newmsg {
 	position: relative;
 	border-color: rgb(35, 153, 241);
 }
-.new::after {
+.newmsg::after {
 	content: 'New Messages';
 	font-size: 14px;
 	padding: 0 20px;
@@ -495,7 +495,7 @@ button {
 	background-color: #fff;
 	position: absolute;
 	left: 50%;
-	top: -9px;
+	top: -10px;
 	z-index: 10;
 }
 .says {
