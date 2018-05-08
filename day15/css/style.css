@@ -483,11 +483,11 @@ button {
 	top: -10px;
 	z-index: 10;
 }
-.newmsg {
+.newmsgs {
 	position: relative;
 	border-color: rgb(35, 153, 241);
 }
-.newmsg::after {
+.newmsgs::after {
 	content: 'New Messages';
 	font-size: 14px;
 	padding: 0 20px;
