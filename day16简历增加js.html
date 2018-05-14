@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+	* {
+		padding: 0;
+		margin: 0;
+	}
+	div {
+		padding-bottom: 25px;
+	}
+	.resume {
+		width: 810px;
+		margin: 0 auto;
+	}
+	h1 {
+		text-align: center;
+		padding-bottom: 40px;
+		letter-spacing: 2em;
+	}
+	h3 {
+		line-height: 180%;
+		border-bottom: 2px solid #00f;
+		border-left: 10px  solid #00f;
+		margin-bottom: 10px;
+		text-indent: 2em;
+	}
+	span {
+		display: inline-block;
+	}
+	.specific {
+		padding-left: 80px;
+	}
+	.info {
+		width: 100px;
+		line-height: 150%;
+	}
+	dt>span {
+		width: 100px;
+	}
+	dt {
+		margin: 10px 0;
+	}
+	dd {
+		text-indent: 2em;
+		padding-left: 70px;
+	}
+	.private .info:after {
+		content: " :";
+	}
+</style>
+</head>
+<body>
+    
+    <div class="resume">
+    	<h1>简历</h1>
+    	<div class="private">
+    		<h3>个人信息</h3>
+    		<div class="specific">
+				<p><span class="info">姓名</span><span class="infodata">米德尔顿</span></p>
+				<p><span class="info">性别</span><span class="infodata">男</span></p>
+				<p><span class="info">生日</span><span class="infodata">2018-1-1</span></p>
+				<p><span class="info">学院</span><span class="infodata">百度前端学院</span></p>
+				<p><span class="info">手机</span><span class="infodata">vivo前后两千万</span></p>
+				<p><span class="info">邮箱</span><span class="infodata">helllo@world.com</span></p>
+    		</div>
+    	</div>
+    	<div class="proj">
+    		<h3>项目经验</h3>
+    		<div class="specific">
+	    		<dl>
+		    		<dt><span>HTML</span>2108.1-2018.2</dt>
+					<dd>语义化是为使人和机器读懂内容和结构, 提高机器检索信息的能力 </dd>
+					<dd>文档类型DOCTYPE是document type, 指定浏览器按照什么样的规则解释文档中的标记</dd>
+					<dd>HTML5是超文本标记语言的最新版本, 朝着语义化的方向制定标准</dd>
+					<dt><span>CSS</span> 2018.2-2018.3</dt>
+					<dt><span>javascript</span> 2018.3-2018.4</dt>
+				</dl>
+    		</div>
+    	</div>
+    	<div class="selfi">
+    		<h3>自我介绍</h3>
+    		<div class="specific">
+    			<p>我是最后的</p>
+    			<button id="btn1">马云不是首富, 我知道有人</button>
+    		</div>
+    	</div>
+    </div>
+    <script>
+    	var btn1 = document.getElementById("btn1");
+		btn1.onclick = function(){
+			var p = document.createElement("p");
+			p.innerHTML = "具体是谁不能透露, 反正曾经马云的资产是他的负一亿倍的样子吧";
+			p.style.color = "#f00";
+			btn1.parentNode.insertBefore(p,btn1);
+			btn1.parentNode.removeChild(btn1);
+		}
+    </script>
+</body>
+</html>
