@@ -2,7 +2,7 @@
 ife2018 作业代码
 
 day6
-      resume预览地址
+      resume预览
       https://letzxgjs.github.io/ife2018/day6/resume.html
 
 day8
@@ -18,3 +18,8 @@ day11
 day15
       切图网页
       https://letzxgjs.github.io/ife2018/day15/chat.html
+
+
+day18
+      javascript基本操作
+      https://letzxgjs.github.io/ife2018/day18.html
