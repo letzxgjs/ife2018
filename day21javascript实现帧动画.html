@@ -18,22 +18,22 @@
 </style>
 </head>
 <body>
-    <div id="smile">    	
-    </div>
-    <script>
+	<div id="smile">    	
+	</div>
+	<script>
 		var y = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
 		var i = 0;
-    	var smile = document.getElementById("smile");
+		var smile = document.getElementById("smile");
 		timer = setInterval(bgpY,100);
-    	function bgpY(){
+		function bgpY(){
 			i++
-			smile.style.backgroundPosition = "0 " + -(y[i]*480) +"px";
-			console.log(y[i])
+			smile.style.backgroundPosition = "0 " + (-y[i]*480) +"px";
+			// console.log(y[i])
 			if (i>15) {
 				i = 0
 				y = y.reverse();
 			}
-    	}
-    </script>
+		}
+	</script>
 </body>
 </html>
