@@ -23,3 +23,7 @@ day15
 day18
       javascript基本操作
       https://letzxgjs.github.io/ife2018/day18.html
+
+day21
+      页面互动
+      https://letzxgjs.github.io/ife2018/day21javascript实现帧动画.html
