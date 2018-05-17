@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>smile</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+	div {
+		width: 480px;
+		height: 480px;
+		background-image: url(erik.jpg);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+	}
+</style>
+</head>
+<body>
+    <div id="smile">    	
+    </div>
+    <script>
+		var y = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+		var i = 0;
+    	var smile = document.getElementById("smile");
+		timer = setInterval(bgpY,100);
+    	function bgpY(){
+			i++
+			smile.style.backgroundPosition = "0 " + -(y[i]*480) +"px";
+			console.log(y[i])
+			if (i>15) {
+				i = 0
+				y = y.reverse();
+			}
+    	}
+    </script>
+</body>
+</html>
