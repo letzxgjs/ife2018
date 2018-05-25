@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>输入提示</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	ul {
+		padding: 0;
+		margin: 0;
+	}
+	#email-sug-wrapper li {
+		list-style: none;
+		width: 175px;
+	}
+	#email-sug-wrapper li:hover {
+		background-color: #f00;
+		cursor: pointer;
+	}
+	#email-sug-wrapper .chosen {
+		background-color: #0f0;
+	}
+    #email-sug-wrapper .choose {
+        background-color: #0f0;
+    }
+</style>
+</head>
+<body>
+    <div class="wrapper">
+    <input id="email-input" type="text" autofocus="true">
+    <ul id="email-sug-wrapper" class="email-sug"></ul>
+    <script type="text/javascript">
+    	var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
+    	var len = postfixList.length
+    	var email = document.getElementById("email-input")
+    	var emailSug = document.getElementById("email-sug-wrapper")
+        // email.onkeyup = function Suggest(){
+    	email.oninput = function Suggest(){
+		    // 获取用户输入，生成提示框中的提示内容，将提示内容添加到email-sug-wrapper中
+		    appendHint()
+		    // 控制email-sug-wrapper的显示/隐藏状态
+		    // if(getEmailInput() !== ''){showHint()}
+	    	getEmailInput() ? showHint() : hideHint()
+		}
+
+		function getEmailInput() {
+		    // 拿到input输入框的输入内容trim后返回
+		    return email.value.replace(' ','')
+		}
+
+		function createHintContent() {
+		    // var emailInput = getEmailInput()
+		    var emailInput = htmlEncode(getEmailInput())
+		    if (emailInput.indexOf('@') != -1) {
+		    	var preFix = emailInput.slice(emailInput.indexOf('@') + 1)
+		    	emailInput = emailInput.slice(0,emailInput.indexOf('@'))
+		    }
+		    var lis = []
+		    // 遍历postfixList
+		    for(var i = 0; i < len; i++){
+		    	if (!preFix || postfixList.join('@').indexOf(preFix) == -1 ) {
+		    		// 没有prefix 或者 prefix没有匹配到, 全部提示
+		    		li = document.createElement("li")
+			    	li.innerHTML = emailInput+ "@" + postfixList[i]
+			    	lis.push(li)
+			    	// 如果是用lis[i]的话创建的是稀疏数组,访问不存在的元素返回undefined
+		    	}else if (postfixList[i].indexOf(preFix) != -1) {
+			    	li = document.createElement("li")
+			    	li.innerHTML = emailInput + "@" + postfixList[i]
+			    	lis.push(li)
+		    	}
+		    }
+		    // lis[liIndex].style.background = '0ff'
+		    // 预选中第一个li
+		    return lis
+		}
+
+		function appendHint() {
+		    // 获取生成提示框中的提示内容
+		    var hint = createHintContent()
+	    	while(emailSug.childNodes.length != 0){
+	    		emailSug.removeChild(emailSug.firstElementChild)
+	    	}
+		    for(var j = 0; j < hint.length; j++){
+		    	htmlDecode(hint[j].innerHTML)
+	    		emailSug.appendChild(hint[j])
+			}
+		}
+		function showHint() {
+		        // 用户输入为空隐藏提示框
+		        emailSug.style.display = 'block'
+		}
+		function hideHint() {
+	        emailSug.style.display = 'none'
+		}
+		// 交互
+		emailSug.onclick = function (e) {
+			var target = e.target
+			if(target.nodeName.toLowerCase() == 'li'){
+				// email.value = target.value
+				email.value = target.innerHTML
+				hideHint()
+			}
+            // 单击选择后, 输入框重新获得焦点
+            email.focus()
+		}
+		// 转义字符
+		function htmlEncode(html){
+            //1.首先动态创建一个容器标签元素，如DIV
+            var temp = document.createElement ("div");
+            //2.然后将要转换的字符串设置为这个元素的innerText(ie支持)或者textContent(火狐，google支持)
+            (temp.textContent != undefined ) ? (temp.textContent = html) : (temp.innerText = html);
+            //3.最后返回这个元素的innerHTML，即得到经过HTML编码转换的字符串了
+            var output = temp.innerHTML;
+            temp = null;
+            return output;
+        }
+        function htmlDecode(text){
+            //1.首先动态创建一个容器标签元素，如DIV
+            var temp = document.createElement("div");
+            //2.然后将要转换的字符串设置为这个元素的innerHTML(ie，火狐，google都支持)
+            temp.innerHTML = text;
+            //3.最后返回这个元素的innerText(ie支持)或者textContent(火狐，google支持)，即得到经过HTML解码的字符串了。
+            var output = temp.innerText || temp.textContent;
+            temp = null;
+            return output;
+        }
+        // 按键: 1基于DOM
+      //   email.onkeyup = function(e){
+      //   	var d = e.code || e.keyCode
+      //   	if(!(d== 'ArrowDown' || d== 'ArrowUp' || d== 'Enter') && !(d==13 || d== 38 || d== 40)){
+      //   		// 按键不是Enter、ArrowDown、ArrowUp, 重置
+      //   		reChoose()
+      //   	}
+    		// var chosen = document.querySelectorAll('#email-sug-wrapper .chosen')[0]
+    		// // chosen.classList.remove("chosen")
+
+      //   	if (d == 'ArrowDown' || d == 40 ){
+      //   		if(emailSug.lastElementChild.classList.contains('chosen')){
+      //   			// 当选择的是最后一个li
+      //   			chosen.classList.remove("chosen")
+      //   			emailSug.firstElementChild.classList.add('chosen')
+      //   		}else {
+      //   			chosen.classList.remove("chosen")
+      //   			chosen.nextElementSibling.classList.add('chosen')
+      //   		}
+      //   	}
+      //   	if (d == 'ArrowUp' || d == 38 ){
+      //   		if(emailSug.firstElementChild.classList.contains('chosen')){
+      //   			// 当选择的是第一个li
+      //   			chosen.classList.remove("chosen")
+      //   			emailSug.lastElementChild.classList.add('chosen')
+      //   		}else {
+      //   			chosen.classList.remove("chosen")
+      //   			chosen.previousElementSibling.classList.add('chosen')
+      //   		}
+      //   	}
+      //   	if (d == 'Enter' || d == 13 ) {
+      //   		email.value = chosen.innerHTML
+      //   		hideHint()
+      //   	}
+      //   }
+      //   function reChoose() {
+      //   	if(emailSug.children.length != 0 && !emailSug.children[0].classList.contains('chosen')){
+      //   		for(var i = 0; i < emailSug.children.length; i++){
+      //   			emailSug.children[i].classList.remove("chosen")
+      //   		}
+      //   		emailSug.children[0].classList.add("chosen")
+      //   	}
+      //   }
+        // 按键: 2基于数据
+        var liIndex = 0;
+        function defaultChoose(){
+        	liIndex = 0
+        }
+        email.onkeyup = function(e){
+        	var d = e.code || e.keyCode
+            // if(!(d== 'ArrowDown' || d== 'ArrowUp' || d== 'Enter')){
+        	if(!(d== 'ArrowDown' || d== 'ArrowUp' || d== 'Enter') && !(d==13 || d== 38 || d== 40)){
+        		// 按键不是Enter、ArrowDown、ArrowUp, 重置
+        		defaultChoose()
+        	}
+        	if (d == 'ArrowDown' || d == 40 ){
+        		if(liIndex == emailSug.childNodes.length - 1){
+        			// 当选择的是最后一个li
+        			liIndex = 0
+        		}else {
+        			liIndex += 1
+        		}
+        	}
+        	if (d == 'ArrowUp' || d == 38 ){
+        		if( liIndex == 0 ){
+        			// 当选择的是第一个li
+        			liIndex = emailSug.childNodes.length - 1
+        		}else {
+        			liIndex -= 1
+        		}
+        	}
+            // emailSug.children[liIndex].style.backgroundColor = '0ff'
+            for(var i =0; i < emailSug.childNodes.length;i++){
+                emailSug.childNodes[i].classList.remove('choose')
+                // emailSug.childNodes[i].style.backgroundColor = '#fff'
+            }
+            emailSug.childNodes[liIndex].classList.add('choose')
+            if (d == 'Enter' || d == 13 ) {
+                email.value = emailSug.children[liIndex].innerHTML
+                hideHint()
+            }
+            if (d == 'Escape' || d == 27 ){
+                email.select()
+            }
+        }
+    </script>
+</body>
+</html>
