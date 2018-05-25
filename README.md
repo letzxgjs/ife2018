@@ -30,5 +30,5 @@ day21
 
 day30
       输入交互
-      https://letzxgjs.github.io/ife2018/day30输入提示流程封装.htm
+      https://letzxgjs.github.io/ife2018/day30输入提示流程封装.html
       
