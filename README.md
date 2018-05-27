@@ -29,6 +29,9 @@ day21
       https://letzxgjs.github.io/ife2018/day21javascript实现帧动画.html
 
 day30
-      输入交互
+      输入交互 
       https://letzxgjs.github.io/ife2018/day30输入提示流程封装.html
       
+day33
+      小商家(MIS系统1) 
+      https://letzxgjs.github.io/ife2018/day33checkbox.html
