@@ -137,13 +137,6 @@
 		
 		// regionSelect.addEventListener('click',checkedCheckbox(regionSelect))
 
-		form.addEventListener('change', function () {
-			// var  = selectData()
-			// 把之前的table删除
-			if (tableWrapper.childNodes[0]) {tableWrapper.removeChild(tableWrapper.childNodes[0])}
-			// 新table
-			if (createTable(selectData())) {tableWrapper.appendChild(createTable(selectData()))}
-		})
 		// 根据select选取数据
 		function selectData() {
 			// var region = regionSelect.getAttribute('data-selected')
@@ -177,15 +170,15 @@
 			
 		}
 		// 调整数据
-		function adjustData(container1, container2){
-			if(regionNum == 1 && productNum > 1){
-				return 1
-			}else if(regionNum > 1 && productNum == 1){
-				return 2
-			}else {
-				return 3
-			}
-		}
+		// function adjustData(container1, container2){
+		// 	if(regionNum == 1 && productNum > 1){
+		// 		return 1
+		// 	}else if(regionNum > 1 && productNum == 1){
+		// 		return 2
+		// 	}else {
+		// 		return 3
+		// 	}
+		// }
 		function createTable(data) {
 			// var adjust = adjustData(regionSelect, productSelect)
 			var regionNum = checkStatus(regionSelect.children[1])
@@ -238,6 +231,14 @@
 				return table
 			}
 		}
+		// core
+		form.addEventListener('change', function () {
+			// var  = selectData()
+			// 把之前的table删除
+			if (tableWrapper.childNodes[0]) {tableWrapper.removeChild(tableWrapper.childNodes[0])}
+			// 新table
+			if (createTable(selectData())) {tableWrapper.appendChild(createTable(selectData()))}
+		})
 	</script>
 </body>
 </html>
