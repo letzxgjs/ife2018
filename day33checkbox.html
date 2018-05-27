@@ -23,7 +23,7 @@
 			<input type="checkbox" value="智能音箱">智能音箱
 		</div>
 	</form>
-    <div id="table-wrapper">
+	<div id="table-wrapper">
 	</div>
 	<script type="text/javascript">
 		let sourceData = [
@@ -203,23 +203,23 @@
 			table.appendChild(thead)
 			// 创建行列
 			if(data){
-				for(var row = 0;row < data.length; row++){
+				for(var i = 0;i < data.length; i++){
 					var tr = document.createElement('tr')
 					for(var j = 0; j < 14; j++){
-					// 新分类第一个合并rows个单元格
 						var td = document.createElement('td')
 						if(j == 0){
 							// 有需要合并的
-							if(row % rows == 0){
-								td.innerHTML = switching ? data[row].region : data[row].product
+							if(i % rows == 0){
+								td.innerHTML = switching ? data[i].region : data[i].product
+								// 新分类第一个合并rows个单元格
 								td.setAttribute('rowspan', rows)
 							}
 						}else if(j ==1){
 							// var td = document.createElement('td')
-							td.innerHTML = switching ? data[row].product : data[row].region
+							td.innerHTML = switching ? data[i].product : data[i].region
 						}else {
 							// var td = document.createElement('td')
-							td.innerHTML = data[row].sale[j-2]
+							td.innerHTML = data[i].sale[j-2]
 						}
 						// 最后, 如果td内容不为空, td插入tr
 						if (td.innerHTML != '') {
