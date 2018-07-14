@@ -482,6 +482,7 @@ button {
 	left: 50%;
 	top: -10px;
 	z-index: 10;
+	transform: translateX(-50%);
 }
 .newmsgs {
 	position: relative;
@@ -497,6 +498,7 @@ button {
 	left: 50%;
 	top: -10px;
 	z-index: 10;
+	transform: translateX(-50%);
 }
 .says {
 	margin: 20px 30px;

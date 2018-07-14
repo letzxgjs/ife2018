@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>单例模式</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<!-- <script type="text/javascript" src="menu.js"></script> -->
+<script type="text/javascript" src="day46.js"></script>
+<script type="text/javascript" src="../day49/menu.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+    	// 创建餐厅单例
+    	var SingleRestaurant = Single(Restaurant);
+		var restaurant = new SingleRestaurant(1, dishes, [])
+		// 创建服务员单例
+    	var SingleWaiter = Single(Waiter)
+    	var waiter = new SingleWaiter(101, 'zxg', 2000)
+    	// 创建厨师单例
+    	var SingleCook = Single(Cook)
+    	var cook = new SingleCook(201, 'dacu', 8000)
+    	var cook2 = new SingleCook(202, 'xiaocu', 8000)
+    	// console.log(cook === cook2)
+		// 招聘职员
+    	restaurant.hire(waiter)
+    	restaurant.hire(cook)
+    	// console.log(restaurant.staff)
+    	var customers = []
+    	customers[0] = new Customer()
+    	customers[1] = new Customer()
+    	customers[2] = new Customer()
+    	customers[3] = new Customer()
+    	customers[4] = new Customer()
+    	customers[5] = new Customer()
+    	restaurant.customers = customers;
+
+    	restaurant.operating()
+    	restaurant.getMoney()
+    </script>
+<!-- <script type="text/javascript" src="day46csdn.js"></script> -->
+</body>
+</html>
