@@ -24,6 +24,26 @@
 - day33
     [小商家(MIS系统1)](https://letzxgjs.github.io/ife2018/day33checkbox.html)
 
+- day36
+    [小商家svg&canvas图表](https://letzxgjs.github.io/ife2018/day36/day36svgBarChart.html)
+
+- day38
+    [小商家页面localStorage](https://letzxgjs.github.io/ife2018/day38/day38localStorage)
+
+- day57
+    [面向对象-足球小将](https://letzxgjs.github.io/ife2018/day57/足球小将.html)
+
+- ajax
+    [登录](https://letzxgjs.github.io/ife2018/ajax/login.html)
+    [注册](https://letzxgjs.github.io/ife2018/ajax/register.html)
+    [originaljsonp](https://letzxgjs.github.io/ife2018/jsonp/jsonp.html)
+    [jQueryjsonp](https://letzxgjs.github.io/ife2018/jsonp/jQueryjsonp.html)
+
+
+
+
+
+
 
 
 
