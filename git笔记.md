@@ -16,9 +16,9 @@ git init
     - 确定是否git commit -m ''
 - `git diff HEAD <file>` 工作区和版本库里面最新版本的区别
 
-#### git add <file>####
+#### git add <file> ####
 
-#### git commit####
+#### git commit ####
 - `git commit -m "some description"`
 - `git commit` 不带参数, 进入vim编辑模式
     - 创建、打开文件   `vi <file>`, i或insert键进入编辑
