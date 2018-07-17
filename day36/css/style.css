@@ -1,0 +1,27 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2018-06-02 16:26:20
+ * @version $Id$
+ */
+table{
+	padding: 2px;
+	border-collapse: collapse;
+	box-sizing: border-box;
+}
+td{
+	text-align: center;
+	width:70px;
+	padding: 2px 0;
+}
+td{
+	border: 1px solid #ccc;
+}
+#table-wrapper {
+	display: inline-block;
+	padding-top: 2px;
+}
+.selected {
+	background-color: #DEE9FF;
+}
