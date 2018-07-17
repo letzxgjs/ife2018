@@ -1,7 +1,9 @@
 <?php
 
-$mobile = $_POST["mobile"];
-$pwd = $_POST["pwd"];
+// $mobile = $_POST["mobile"];
+// $pwd = $_POST["pwd"];
+$mobile = $_GET["mobile"];
+$pwd = $_GET["pwd"];
 
 $mobileErr = "";
 $pwdErr = "";

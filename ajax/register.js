@@ -44,7 +44,8 @@ window.onload = function(){
 		console.log(err1)
 		if (err1) {
 			// ajax("get", url, para, sms)
-			ajax("POST", url, para, sms)
+			ajax("GET", url, para, sms)
+			// ajax("POST", url, para, sms)
 		}
 	}
 
@@ -61,7 +62,8 @@ window.onload = function(){
 		var err3 = valify(pwd, /^\w{6,}$/, "输入密码格式错误! 请重新输入")
 		var err4 = confirmPwd(pwd, pwd2)
 		if(err1*err2*err3*err4){
-			ajax("POST", url, para, regi)
+			// ajax("POST", url, para, regi)
+			ajax("GET", url, para, regi)
 		}
 		
 	}

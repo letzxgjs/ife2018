@@ -26,7 +26,8 @@ window.onload = function() {
         para.mobile = mobile.value
         para.pwd = pwd.value
 
-        ajax("POST", url, para, log)
+        ajax("GET", url, para, log)
+        // ajax("POST", url, para, log)
     }
 }
 

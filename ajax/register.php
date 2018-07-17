@@ -1,9 +1,11 @@
 <?php 
 
-$mobile = $_POST['mobile'];
-$pwd = $_POST['pwd'];
-$code = $_POST['code'];
-
+// $mobile = $_POST['mobile'];
+// $pwd = $_POST['pwd'];
+// $code = $_POST['code'];
+$mobile = $_GET['mobile'];
+$pwd = $_GET['pwd'];
+$code = $_GET['code'];
 
 $response = '{
        "status":"1",
