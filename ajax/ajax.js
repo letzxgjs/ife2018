@@ -18,7 +18,7 @@ function ajax(method, url, parameter, callback){
 	// 发起请求
 	xhr.open(method, url)
 
-	xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded')
+	// xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded')
 	// xhr.setRequestHeader('Content-type','application/multipart/form-data')
 	// xhr.setRequestHeader('Content-type','application/json')
 
