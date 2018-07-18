@@ -1,4 +1,4 @@
-# 廖雪峰git教程笔记 
+
 
 ### 创建仓库
 
@@ -89,7 +89,8 @@ git init
     + `git clone ssh://example.com/path/to/repo.git`
     + `git clone [user@]example.com:path/to/repo.git` (ssh)
     + `git clone http[s]://example.com/path/to/repo.git`
-    + `git clone http://git.oschina.net/yiibai/sample.git`
+
++ `git clone http://git.oschina.net/yiibai/sample.git`
     + `git clone git://example.com/path/to/repo.git`
     + `git clone /opt/git/project.git`
     + `git clone file:///opt/git/project.git`
