@@ -1,6 +1,6 @@
 # 廖雪峰git教程笔记 
 
-### 创建仓库 ###
+### 创建仓库
 
 #### 初始化
 git init 
@@ -16,23 +16,24 @@ git init
     - 确定是否git commit -m ''
 - `git diff HEAD <file>` 工作区和版本库里面最新版本的区别
 
-#### git add <file>####
+#### git add <file>
 
-#### git commit####
+#### git commit
 - `git commit -m "some description"`
 - `git commit` 不带参数, 进入vim编辑模式
     - 创建、打开文件   `vi <file>`, i或insert键进入编辑
     - 保存文件   esc键 :wq
     - 放弃修改   esc键 :q! (|:e!)
 
-#### git status####
+#### git status
 查看工作区变动
 
 
-### 版本回退###
+### 版本回退
 - `git log`
     - `git log --pretty=oneline`  在一行内显示
-    - `git log --graph --pretty=oneline --abbrev-commit` 查看分支合并情况
+    - `git log --gra
+    ph --pretty=oneline --abbrev-commit` 查看分支合并情况
     - 查看版本历史记录
     - 其中由sha1产生的十六进制数字作commit id版本号
     - HEAD表示当前最新版本, HEAD^表示上一个版本, HEAD^^, HEAD100
@@ -40,7 +41,7 @@ git init
     - `git reset --hard HEAD`
     - `git reset --hard 'commit id'`
     - `git reflog` 记录每次命令, 记录HEAD id
-### 工作区、暂存区、本地仓库(.git文件夹)、远程仓库###
+### 工作区、暂存区、本地仓库(.git文件夹)、远程仓库
 - 工作区 本地文件夹
 - ~~暂存区 git add 提交的文件~~ <font color="red">应是所有没有git add的文件</font>
 - 本地仓库 HEAD指针指向这里, git commit提交更新到此处
@@ -51,23 +52,23 @@ git init
 ![工作区、暂存区、仓库关系](https://cdn.liaoxuefeng.com/cdn/files/attachments/001384907702917346729e9afbf4127b6dfbae9207af016000/0)
 
 
-### git管理的是<font color=blue>修改</font>###
+### git管理的是<font color=blue>修改</font>
 管理git add到暂存区并且git commit 到仓库的修改
 
 `git diff HEAD <file>` 工作区和版本库里面最新版本的区别
 
-### 撤销修改###
+### 撤销修改
 - 文件还没git add --> `git checkout -- <file>` **文件在工作区的修改全部撤销**
 - 已经add, 未commit --> `git reset HEAD <file>` **把暂存区的修改撤销掉（unstage），重新放回工作区**
     - 多个文件, `git reset [HEAD]`
 - 已经commit --> `git reset --hard HEAD`
 
-### 删除文件###
+### 删除文件
 - `git rm <file>` 删除文件, 
 - `git checkout -- <file>` 从仓库恢复. **但不能恢复最后一次提交后再修改的内容**
 
 
-### 远程仓库###
+### 远程仓库
 
 - 创建远程仓库
     + 创建SSH key:
@@ -98,13 +99,13 @@ git init
 参考[易百教程](http://www.ituring.com.cn/article/504)
 
 
-## <font color="red">分支管理</font>##
-### 创建合并分支###
-- #####master指向最新提交, head指向master#####
+## <font color="red">分支管理</font>
+### 创建合并分支
+- ##### master指向最新提交, head指向maste
 
 ![master指向最新提交, head指向master](https://cdn.liaoxuefeng.com/cdn/files/attachments/0013849087937492135fbf4bbd24dfcbc18349a8a59d36d000/0)
 
-- #####新建分支dev时 (创建dev指针指向master相同的提交, 再把head指向dev, 表示当前分支中dev上)#####
+- ##### 新建分支dev时 (创建dev指针指向master相同的提交, 再把head指向dev, 表示当前分支中dev上)#####
 
 <font color="red">※工作区文件没有变</font>
 
@@ -124,7 +125,7 @@ $ git checkout dev #指针移动
 
 ![新建dev分支](https://cdn.liaoxuefeng.com/cdn/files/attachments/001384908811773187a597e2d844eefb11f5cf5d56135ca000/0)
 
-- #####合并分支#####
+- ##### 合并分支
     + Fast-forward快进模式(dev新提交, dev指针移动, 合并时把master指针指向dev的当前提交)※不知道是否合并过
 
     `$ git merge dev` 把dev分支合并到当前分支亦即master
@@ -146,7 +147,7 @@ $ git checkout dev #指针移动
 
     ![解决冲突](https://cdn.liaoxuefeng.com/cdn/files/attachments/00138490913052149c4b2cd9702422aa387ac024943921b000/0)
 
-- ##### 删除分支#####
+- ##### 删除分支
 `$ git branch -d dev` 删除dev分支
 
 
@@ -157,11 +158,11 @@ $ git checkout dev #指针移动
 >孙悟空分身, 猫9条命, 伏地魔
 
 
-### 分支管理###
+### 分支管理
 ![分支策略](https://cdn.liaoxuefeng.com/cdn/files/attachments/001384909239390d355eb07d9d64305b6322aaf4edac1e3000/0)
 <img src="分支策略.PNG">
 
-### bug分支###
+### bug分支
 1. `git stash` 把当前工作现场“储藏”起来，等以后恢复现场后继续工作
     - 新文件须`git add` 后才能`git stash `
 2. 在master上创建临时分支, 修复bug, 合并并删除bug分支
@@ -174,17 +175,19 @@ $ git checkout dev #指针移动
     ```
     - `git stash pop`
 
-##### ※奇怪的地方#####
+##### ※奇怪的地方
 1. git stash pop在任意分支上都可以用, 而且会出现窃取
 2. 
 
 
-### 删除分支###
+### 删除分支 
+
 - `git branch -d someBranch1` 
 - `git branch -D someBranch1` 未合并的分支, git会提醒
 
 
-### 多人协作###
+### 多人协作 
+远程仓库上的默认名称是origin
 远程仓库上的默认名称是origin
 `git remote` origin
 
@@ -203,7 +206,7 @@ origin  git@github.com:michaelliao/learngit.git (push)
 + dev分支需要时刻与远程仓库的dev同步
 + bug分支、feature分支不需要
 
-#### 实战####
+#### 实战
 1. 从远程仓库clone时默认只克隆master分支
 2. `git checkout -b dev origin/dev` 从远程仓库clone dev分支
 3. ~~git branch --set-upstream-to=origin/dev dev 设置远程分支与本地分支链接~~
@@ -213,9 +216,9 @@ origin  git@github.com:michaelliao/learngit.git (push)
 <img src="关联本地分支与远程分支.PNG">
 
 
-### git rebase###
+### git rebase
 
-### 标签###
+### 标签 ###
 和commit相似, 也是仓库的快照, 但标签指向的某个commit指针不能移动
 
 - 创建标签 `git tag <tagname> [可选commit id]` 默认是最新提交的commit id(即HEAD)
@@ -236,12 +239,12 @@ git push origin :refs/tags/<tagName>
 
 
 
-### 使用Github###
+### 使用Github
 
 <img src="使用Github.png">
 
 
-### 自定义Git###
+### 自定义Git
 - 忽略文件
 
 - 配置命令别名
@@ -267,7 +270,7 @@ git config --global --unset alias.ci #删除别名ci
 
 
 
-### git常见conflict###
+### git常见conflic
 - `error: you need to resolve your current index first`
 
 >Try this if you don't want any of the merges listed in git status:
