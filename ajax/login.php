@@ -1,10 +1,10 @@
 <?php
 
-// $mobile = $_POST["mobile"];
-// $pwd = $_POST["pwd"];
-$mobile = $_GET["mobile"];
-$pwd = $_GET["pwd"];
-header( 'Content-Type:text/html;charset=utf-8 ');
+$mobile = $_POST["mobile"];
+$pwd = $_POST["pwd"];
+// $mobile = $_GET["mobile"];
+// $pwd = $_GET["pwd"];
+// header( 'Content-Type:text/html;charset=utf-8 ');
 $mobileErr = "";
 $pwdErr = "";
 
