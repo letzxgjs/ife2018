@@ -11,7 +11,7 @@ $(function(){
 		var city = $("#cityname").val()
 		$.ajax({
 			url: "http://toy1.weather.com.cn/search?cityname=" + city, 
-			typeo: "GET", 
+			type "GET", 
 			dataType: "jsonp", 
 			scriptCharset : 'utf-8',
 			// jsonp: "cb", //设置了这个, 反而没用了???
