@@ -2,6 +2,7 @@
 // 封装ajax
 
 function ajax(method, url, parameter, callback){
+	console.log(method)
 	// 创建xhr对象
 	var xhr = null
 	try{
@@ -13,9 +14,10 @@ function ajax(method, url, parameter, callback){
 	// 编码请求主体
 	parameter = encodeData(parameter)
 	if (method == 'get' || method == 'GET') {
+		console.log('zxg9051')
 		url += "?" + parameter
 	}
-	// console.log(parameter)
+	console.log(url)
 	// 发起请求
 	xhr.open(method, url)
 
@@ -27,6 +29,7 @@ function ajax(method, url, parameter, callback){
 		if (xhr.readyState == 4 ) {
 			if (xhr.status == 200) {
 				// var data = xhr.responseText
+				// console.log(data)
 				var data = JSON.parse(xhr.responseText)
 				callback(data)
 				// if (data.status == 1) {
@@ -38,20 +41,21 @@ function ajax(method, url, parameter, callback){
 			
 		}
 	}
-
+console.log(parameter)
 	xhr.send(parameter)
 }
 
 
 // 编码请求主体
 function encodeData(obj){
-		var str = ''
+		var pair = []
 		for(var prop in obj){
+			if (!obj.hasOwnProperty(prop)) continue
 			if (obj.hasOwnProperty(prop)) {
-				str += prop + "=" + obj[prop] + "&"
+				pair.push(prop + "=" + obj[prop])
 			}
 		}
-		return str
+		return pair.join("&")
 }
 
 // 输入验证
