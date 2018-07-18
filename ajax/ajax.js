@@ -2,7 +2,6 @@
 // 封装ajax
 
 function ajax(method, url, parameter, callback){
-	console.log(method)
 	// 创建xhr对象
 	var xhr = null
 	try{
@@ -14,10 +13,8 @@ function ajax(method, url, parameter, callback){
 	// 编码请求主体
 	parameter = encodeData(parameter)
 	if (method == 'get' || method == 'GET') {
-		console.log('zxg9051')
 		url += "?" + parameter
 	}
-	console.log(url)
 	// 发起请求
 	xhr.open(method, url)
 
@@ -41,7 +38,6 @@ function ajax(method, url, parameter, callback){
 			
 		}
 	}
-console.log(parameter)
 	xhr.send(parameter)
 }
 
