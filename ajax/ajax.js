@@ -38,7 +38,8 @@ function ajax(method, url, parameter, callback){
 			
 		}
 	}
-	xhr.send(parameter)
+	xhr.send(null)
+	// xhr.send(parameter)
 }
 
 
